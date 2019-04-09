@@ -20,8 +20,6 @@ function print(value) {
   // YOUR CODE ABOVE HERE //
 }
 
-print('hello');
-
 
 
 

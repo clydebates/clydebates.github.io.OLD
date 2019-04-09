@@ -24,10 +24,10 @@ function reverseString(input) {
     var reversed = '';
     for (var i=input.length-1; i > -1; i--){
       reversed += input[i];
-      return reversed;
     }
-    console.log(reversed);
-    
+    return reversed
+    //ALSO:
+    //return input.split('').reverse().join('')
     
     // YOUR CODE GOES ABOVE HERE //
 }

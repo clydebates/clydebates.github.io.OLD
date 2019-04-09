@@ -13,7 +13,13 @@
  */
 function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
-    
+    return function(value) {
+        if (value > base) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     
     
     
@@ -27,7 +33,13 @@ function createGreaterThanFilter(base) {
  */
 function createLessThanFilter(base) {
     // YOUR CODE BELOW HERE //
-    
+    return function(value){
+        if (value < base) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     
     
     
@@ -41,7 +53,13 @@ function createLessThanFilter(base) {
  */
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
-    
+    return function(string) {
+        if (string[0].toLowerCase() === startsWith.toLowerCase()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     
     
     
@@ -55,7 +73,13 @@ function createStartsWithFilter(startsWith) {
  */
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
-    
+    return function(string) {
+        if (string[string.length - 1].toLowerCase() === endsWith.toLowerCase()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     
     
     
@@ -71,10 +95,14 @@ function createEndsWithFilter(endsWith) {
  */
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
+    //create array to collect our answer
+    var collect = [];
+    //loop thru strings array
+    for (let i = 0; i < strings.length; i++) {
+        //push modified strings into our new array
+        collect.push(modify(strings[i]));
+    }
+    return collect;
     // YOUR CODE ABOVE HERE //
 }
 
@@ -89,10 +117,16 @@ function modifyStrings(strings, modify) {
  */
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
+    //We're basically building the .every() method
+    // could do this with return strings.every(test);
+    //loop thru stings array, apply test function to each element
+    for (var i = 0; i < strings.length; i++) {
+        //if any one element fails test, return false.
+        if (test(strings[i]) === false) {
+            return false;
+        } 
+    } //if entire loop runs and false isn't returned, return true
+    return true;
     // YOUR CODE ABOVE HERE //
 }
 
