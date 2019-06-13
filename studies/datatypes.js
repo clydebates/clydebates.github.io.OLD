@@ -198,7 +198,7 @@ var num2 = 1
 num1+num2 //this adds 1 and 1, and returns 2. but the original values are not changed, and since we aren't assigning this to a variable, this 2 is lost forever.
 
 
-//To be perfectly accurate, variables in javascript are allotted just 8 bites of memory space.
+//To be perfectly accurate, variables in javascript are allotted just 8 bits of memory space.
 //The number data type is the biggest of the primitives, it takes the full 8 bits.
 //Since all primitive types can be stored in those 8 bits, they are stored by VALUE. The literal value is copied into memory.
 
@@ -212,7 +212,7 @@ var foo = 5;
 
 // Defining a function that should change the Primitive value... right?
 function addTwo(num) {
-   num += 2;
+  return num += 2;
 }
 
 // Calling the function while passing our Primitive as an argument
@@ -222,7 +222,7 @@ console.log(foo);   // 5...NOT 7
 
 /*Primitive data types are stored as copies in memory, therfore our foo variable is not changed outside the scope of the function. 
 Inside the function, a COPY of foo has 2 added to it. The original, global foo remains at five. */
-//If we wanted to get 7 out of this, we would have to assign a new variable to the expression num += 2, and return that variable.
+//If we wanted to get 7 out of this, we would have to console.log the addTwo(foo) function call.
 
 
 // COMPLEX

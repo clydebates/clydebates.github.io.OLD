@@ -72,3 +72,10 @@ console.log(double()); /*prints 20 because it's running the nested function
 (which is an example of closure because it takes a variable from the parent scope) */
 console.log(outerFunction()()); /*prints 20 because we're invoking the outerFunction 
 and then the nested function with the second set of parentheses.*/
+
+
+//FUNCTION HOISTING//
+/** Function declarations AND their bodies get hoisted to the top of their scope.
+ * Function hoisting takes precedence over variable hoisting, they get pulled to the 
+ * very top, even if var is declared first.
+ * */

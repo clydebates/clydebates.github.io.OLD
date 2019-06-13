@@ -94,9 +94,21 @@ function makeContactList() {
                 list += nameFull + '\n';
             }
             //remove the last character of the list, which will be the last line break
-            let noLineBreak = list.substring(0, list.length-1);
-            return noLineBreak;
+            /*Technically we're not removing anything, we're creating a substring from 
+            the list string, starting at the beginning and stopping at the last character*/
+            let noLastLineBreak = list.substring(0, list.length-1);
+            return noLastLineBreak;
         }
+        
+        /* ALTERNATIVE SOLUTION:
+        printAllContactNames: function(contact) {
+       var names = [];
+        for (var i = 0; i < contacts.length; i++) {
+           names.push(contacts[i]["nameFirst"] + " " + contacts[i]["nameLast"]);
+            }
+            return names.join('\n');
+        }
+        */
     }
 }
 
